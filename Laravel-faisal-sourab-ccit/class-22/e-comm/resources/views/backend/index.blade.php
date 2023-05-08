@@ -606,6 +606,24 @@ License: You must have a valid license purchased only from themeforest(the above
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="javascript:;" class="side-menu  ">
+                            <div class="side-menu__icon"> <i data-feather="award"></i> </div>
+                            <div class="side-menu__title">
+                                Brand Management 
+                                <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                            </div>
+                        </a>
+                        <ul class="">
+                            <li>
+                                <a href="index.html" class="side-menu side-menu--active side-menu--open">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> All Brand </div>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
              
                 </ul>
             </nav>
@@ -824,7 +842,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <!-- END: Top Bar -->
                 <div class="py-3">
-                    <h2>Hello There</h2>
+                    {{-- <h2 class=" text-blue-600 text-2xl" >Hello There</h2> --}}
+                    <h2 class="text-2xl text-gray-800 ">Welcome To E-comm <span class="text-blue-600 capitalize">{{ auth()->user()->name}}</span> </h2>
                 </div>
             </div>
             <!-- END: Content -->
