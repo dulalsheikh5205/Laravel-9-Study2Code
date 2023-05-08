@@ -21,6 +21,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <title>Dashboard - Rubick - Bootstrap HTML Admin Template</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('backend/dist/css/app.css')}}"/>
+
+        @vite('resources/css/app.css')
+
         <!-- END: CSS Assets-->
     </head>
     <!-- END: Head -->
