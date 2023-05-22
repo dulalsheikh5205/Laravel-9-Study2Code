@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\weatherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +21,17 @@ Route::get('/', function () {
 Route::get('/home', function(){
     echo "Hello, World!";
 });
+
+
+// hasinHyder live laravel class-2
+
+Route::get('/books', [BookController::class,'books']);
+Route::get('/books/{id}', [BookController::class,'getBook']);
+Route::get('/books/{id}/{field}', [BookController::class,'getBookField']);
+// Route::get('/books/{id}', [BookController::class,'getBook'])->whereNumber('id');
+// Route::get('/books/{id}/author', [BookController::class,'getBookAuthor']);
+// Route::get('/books/{id}/title', [BookController::class,'getBook']);
+
+
+// Route::get('/weather/{city}', [weatherController::class,'getWeather']);
+// Route::get('/weather/{city?}', [weatherController::class,'getWeather']);
