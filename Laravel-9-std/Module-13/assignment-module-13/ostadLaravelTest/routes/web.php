@@ -25,9 +25,19 @@ Route::get('/home', function(){
 
 // hasinHyder live laravel class-2
 
-Route::get('/books', [BookController::class,'books']);
-Route::get('/books/{id}', [BookController::class,'getBook']);
-Route::get('/books/{id}/{field}', [BookController::class,'getBookField']);
+// Route::get('/books', [BookController::class,'books']);
+// Route::get('/books/{id}', [BookController::class,'getBook']);
+// Route::get('/books/{id}/{field}', [BookController::class,'getBookField']);
+
+Route::controller(BookController::class)->group(function(){
+    Route::get('/books', 'books');
+    Route::get('/books/{id}', 'getBook');
+    Route::get('/books/{id}/{field}','getBookField');
+
+    Route::post('/books', 'createBook');
+
+    Route::post('/header', 'getHeader');
+});
 // Route::get('/books/{id}', [BookController::class,'getBook'])->whereNumber('id');
 // Route::get('/books/{id}/author', [BookController::class,'getBookAuthor']);
 // Route::get('/books/{id}/title', [BookController::class,'getBook']);

@@ -30,8 +30,16 @@ class BookController extends Controller
     ];
 
 
-    function books(){
-        return $this->books;
+    function books(Request $request){
+        $limit = $request->query('limit',0);
+        // return $limit;
+        if($limit==0){
+
+            return $this->books;
+        }else{
+          return  array_splice($this->books, 0, $limit);
+        }
+     
     }
 
     function getBook($id){
@@ -43,5 +51,29 @@ class BookController extends Controller
         $bookId = $id-1;
         $book = $this->books[$bookId];
         return $book[$field];
+    }
+
+    
+    function createBook(Request $request){
+        $author = $request->get('author');
+        $title = $request->get('title');
+
+        return "Author = {$author} and Title = {$title}";
+    }
+    /*
+    function createBook(){
+        $author = request()->get('author');
+        $title = request()->get('title');
+
+        return "Author = {$author} and Title = {$title}";
+    }
+    */
+
+    function getHeader(Request $request){
+        $author = $request->get('author');
+        $title = $request->get('title');
+        $token = $request->header('token');
+
+        return "Author = {$author} and Title = {$title} and Token = {$token}";
     }
 }
